@@ -33,6 +33,13 @@
                     </button>
                 </form>
             @endif
+            <form action="{{action('CatalogController@deleteMovie', $pelicula->id)}}"  method="POST" style="display:inline">
+                    {{ method_field('DELETE') }}
+                    {{ csrf_field() }}
+                <button type="submit" class="btn btn-danger">
+                    <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar pel·lícula 
+                </button>
+            </form>
         <a class="btn btn-warning" href="{{ url('/catalog/edit/'.$pelicula->id )}}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar película</span></a>
         <a class="btn btn-outline-dark" href="{{url('/catalog')}}" role="button"><span class="glyphicon glyphicon-chevron-left">Volver al listado</span></a>
       </div>
