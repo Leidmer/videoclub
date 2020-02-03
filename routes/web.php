@@ -13,7 +13,7 @@
 
 Route::get('/', 'HomeController@getHome');
 
-Route::get('/catalog/', 'CatalogController@getIndex')->middleware('auth');
+Route::get('catalog', 'CatalogController@getIndex')->middleware('auth');
 Route::get('/catalog/show/{id}', 'CatalogController@getShow')->middleware('auth');
 
 Route::get('/catalog/create', 'CatalogController@getCreate')->middleware('auth');
