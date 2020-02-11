@@ -64,7 +64,32 @@
             </form>
         <a class="btn btn-warning" href="{{ url('/catalog/edit/'.$pelicula->id )}}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar película</span></a>
         <a class="btn btn-outline-dark" href="{{url('/catalog')}}" role="button"><span class="glyphicon glyphicon-chevron-left">Volver al listado</span></a>
-        <p style="font-size: 2em; margin-top: 30px;">Comentaris</p>
+    
+                      <div class="container">
+                <div style="margin-right:0px; margin-left:0px; margin-top: 30px;"">
+                  <h2>Comentaris |2| <div class="pull-right"> </div></h2>
+                </div>
+                <div  id="addcomment" style="display: none; margin-right:0px; margin-left:0px;">
+                    <form>
+                        <textarea class="form-control" placeholder="Comment content..."></textarea><br/>
+                        <button class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+                <hr>
+                <div style="margin-right:20px; margin-left:20px;margin-bottom:30px;">
+                    <div style="margin-bottom:10px;">
+                        <small><strong style="margin-right:30px;">Diablo25</strong> 30.10.2017 12:13</small>
+                    </div>    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed, faucibus mauris. Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta nibh pellentesque, ultrices dolor. Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed sit amet mi dignissim, pretium justo non, lacinia libero. Nulla facilisi. Donec id sem velit. </p>
+                </div>
+                <div style="margin-right:20px; margin-left:20px;margin-bottom:30px;">
+                    <div style="margin-bottom:10px;">
+                        <small><strong style="margin-right:30px;">Giesche</strong> 30.10.2017 12:13</small>
+                    </div>    
+                    <p>Praesent molestie ante nec metus convallis aliquam. Ut aliquam tincidunt mollis. Maecenas et ex sit amet est vehicula ultrices sed sit amet elit. Suspendisse potenti. Aenean et quam ut purus convallis porttitor. Mauris porttitor pretium elementum. Duis blandit elit tincidunt ipsum ultricies, ut faucibus lorem facilisis. Proin ipsum turpis, pharetra in lorem ac, porta ullamcorper velit. Proin gravida odio eget elit ultricies sodales. Vivamus vel tincidunt ligula. Proin pulvinar pellentesque velit eget luctus. Aliquam vitae enim ut purus vestibulum sollicitudin sit amet eget lacus. Nunc tempus fringilla tincidunt. </p>
+                </div>
+                <hr>
+              </div>
         <form>
               <div class="form-group">
                 <label for="enviacomentari">Enviar comentari:</label>

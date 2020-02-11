@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Movie;
+use App\Review;
 use Notify;
 
 class CatalogController extends Controller
@@ -18,7 +19,7 @@ class CatalogController extends Controller
     }
 
     public function getShow($id)
-    {
+    {  
         $pelicula = Movie::findOrFail($id);
 
         return view('catalog.show', array(
@@ -87,7 +88,6 @@ class CatalogController extends Controller
         
     }
 
-//PROVISIONAL
     public function putFavourite($id)
     {
         $movie = Movie::findOrFail($id);
