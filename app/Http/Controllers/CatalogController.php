@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\Review;
@@ -21,9 +21,12 @@ class CatalogController extends Controller
     public function getShow($id)
     {  
         $pelicula = Movie::findOrFail($id);
+        
+        $Reviews = Review::where('movie_id', $id)->get();
 
         return view('catalog.show', array(
-            'pelicula' => $pelicula
+            'pelicula' => $pelicula,
+            'Reviews' => $pelicula
         ));
     }
 
@@ -135,4 +138,33 @@ class CatalogController extends Controller
 
     }
 
-}
+    public function postReview(Request $request, $id){
+
+            $user = Auth::id();
+            $pelicula = Movie::findOrFail($id);
+            $r = new Review;
+            $r->title = $request->title;
+            $r->review = $request->review;
+            $r->stars = $request->stars;
+            $r->user_id = $user;
+            $r->movie_id = $pelicula->id;
+            $r->save();
+    
+            $Reviews = Review::where('movie_id', $pelicula->id)->get();
+    
+            Notify::success('Opinió enviada');
+    
+            return view('catalog.show', array('pelicula'=>$pelicula, 'Reviews'=>$Reviews));
+        }
+        
+    public function searchMovie(Request $request){
+         $q = $request->input('q');
+         $arrayPeliculas = Movie::where('title', 'LIKE', '%' . $q . '%')
+                           ->orWhere('director', 'LIKE', '%' . $q . '%')
+                           ->get();
+         return view('catalog.index', compact('arrayPeliculas', 'q'));
+        }
+
+    }
+
+

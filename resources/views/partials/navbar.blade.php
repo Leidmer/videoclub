@@ -23,6 +23,18 @@
                 </ul>
 
                 <ul class="navbar-nav navbar-right">
+                <li class="nav-item">
+                      <form action="{{ action('CatalogController@searchMovie')}}" method="GET">
+                        <div class="row">
+                          <div class="col-8">
+                            <input class="form-control" type="text" name="q"/>
+                          </div>
+                          <div>
+                            <button type="submit" class="btn btn-success">Buscar</button>
+                          </div>
+                        </div>
+                      </form>
+                    </li>
                     <li class="nav-item">
                         <form action="{{ url('/logout') }}" method="POST" style="display:inline">
                             {{ csrf_field() }}

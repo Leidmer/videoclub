@@ -30,6 +30,8 @@ Route::delete('catalog/delete/{id}', 'CatalogController@deleteMovie')->middlewar
 
 Route::put('catalog/favourite/{id}', 'CatalogController@putFavourite')->middleware('auth');
 Route::put('catalog/notfavourite/{id}', 'CatalogController@putNotFavourite')->middleware('auth');
+Route::post('/review/create/{id}', 'CatalogController@postReview')->middleware('auth');
+Route::get('/catalog','CatalogController@searchMovie')->middleware('auth');
 
 
 

@@ -19,10 +19,13 @@ class CreateReviewsTable extends Migration
             $table->text('review');
             $table->integer('stars');
             $table->timestamp('timestamps');
-            $table->integer('user_id')->references('id')->on('users');
-            $table->integer('movie_id')->references('id')->on('movies');
-
+            $table->bigInteger('user_id')->unsigned(); 
+            $table->bigInteger('movie_id')->unsigned();
         });
+        Schema::table('reviews', function($table) {
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('movie_id')->references('id')->on('movies');
+        }); 
     }
 
     /**
