@@ -26,7 +26,7 @@ class CatalogController extends Controller
 
         return view('catalog.show', array(
             'pelicula' => $pelicula,
-            'Reviews' => $pelicula
+            'Reviews' => $Reviews
         ));
     }
 
