@@ -21,7 +21,15 @@ class CreateMoviesTable extends Migration
             $table->string('poster');
             $table->boolean('rented')->default(false);
             $table->text('synopsis');
+            $table->unsignedBigInteger('category_id')->unisgned()->nullable();
             $table->timestamps();
+        });
+
+        Schema::table('movies', function ($table)
+        {
+            $table->foreign('category_id')->references('id')->on('categories');
+         
+            
         });
     }
 

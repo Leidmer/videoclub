@@ -16,24 +16,6 @@
         <p class="card-text">Resumen: {{$pelicula->synopsis}}</p>
         <p class="card-text">Estado: {{$pelicula->rented}}</p>
 
-        @if ($pelicula->favourite )
-                <p><b>Estat:</b> Pel·lícula afegida a favorits</p>
-                <form action="{{action('CatalogController@putNotFavourite', $pelicula->id)}}"  method="POST" style="display:inline">
-                    {{ method_field('PUT') }}
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-success">
-                        Treure de favorits
-                    </button>
-                </form>
-            @else
-                <form action="{{action('CatalogController@putFavourite', $pelicula->id)}}"  method="POST" style="display:inline">
-                    {{ method_field('PUT') }}
-                    {{ csrf_field() }}
-                    <button type="submit" class="btn btn-success">
-                        <span class="glyphicon glyphicon-download" aria-hidden="true"></span> Afegir a favorits
-                    </button>
-                </form>
-            @endif
 
 
 

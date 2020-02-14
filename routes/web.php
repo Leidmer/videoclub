@@ -27,12 +27,9 @@ Route::put('catalog/rent/{id}', 'CatalogController@putRent')->middleware('auth')
 Route::put('catalog/return/{id}', 'CatalogController@putReturn')->middleware('auth');
 Route::delete('catalog/delete/{id}', 'CatalogController@deleteMovie')->middleware('auth');
 
-
-Route::put('catalog/favourite/{id}', 'CatalogController@putFavourite')->middleware('auth');
-Route::put('catalog/notfavourite/{id}', 'CatalogController@putNotFavourite')->middleware('auth');
 Route::post('/review/create/{id}', 'CatalogController@postReview')->middleware('auth');
 Route::get('/catalog','CatalogController@searchMovie')->middleware('auth');
-
+Route::resource('category','CategoryController');
 
 
 Auth::routes();

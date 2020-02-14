@@ -90,31 +90,7 @@ class CatalogController extends Controller
         return redirect()->back();
         
     }
-
-    public function putFavourite($id)
-    {
-        $movie = Movie::findOrFail($id);
-        
-        $movie->favourite = true;
-        $movie->save();
-        
-        Notify::success('Pel·lícula afegida a favorits');
-        return redirect()->back();
-        
-    }
-
-    public function putNotFavourite($id)
-    {
-        $movie = Movie::findOrFail($id);
-        
-        $movie->favourite = false;
-        $movie->save();
-        
-        Notify::success('La pel·lícula ja no està a favorits');
-        return redirect()->back();
-    }
     
-
     
     public function putReturn($id)
     {
