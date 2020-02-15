@@ -40,6 +40,11 @@
                    Añadir película
                </button>
             </div>
+                    
+            <div class="form-group">
+               <label for="title">Trailer</label>
+               <textarea name="trailer" type="text" id="trailer" class="form-control" rows="3"></textarea>
+            </div>
 
             </form>
 

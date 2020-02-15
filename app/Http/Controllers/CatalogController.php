@@ -46,7 +46,7 @@ class CatalogController extends Controller
         $movie->director = $request->director;
         $movie->poster = $request->poster;
         $movie->synopsis = $request->synopsis;
-
+        $movie->trailer = $request ('trailer');
         $movie->save();
         Notify::success('La película se ha guardado/modificado correctamente'); 
         return redirect()->back();
@@ -72,6 +72,7 @@ class CatalogController extends Controller
         $movie->poster = $request->poster;
         $movie->synopsis = $request->synopsis;
         $movie->category_id = $request->category_id;
+        $movie->trailer = $request ('trailer');
         
         $movie->save();
         Notify::success('La película se ha guardado/modificado correctamente'); 
