@@ -85,6 +85,7 @@
                         <small><strong style="margin-right:30px;">{{$Review->user->name}}</strong> {{date('d/m/Y', strtotime($Review->created_at))}}</small>
                     </div>    
                     <p>{{$Review->review}}</p>
+                    
                 </div>
                 <hr>
               </div>
@@ -118,6 +119,8 @@
       </div>
     </div>
   </div>
+
+
 
     {{-- TODO: Imagen de la película --}}
 

@@ -129,19 +129,21 @@ class CatalogController extends Controller
             $r->save();
     
             $Reviews = Review::where('movie_id', $pelicula->id)->get();
+            $results = DB::select('SELECT AVG(stars) FROM reviews WHERE stars>1', [1])->get();
     
             Notify::success('Opinió enviada');
     
-            return view('catalog.show', array('pelicula'=>$pelicula, 'Reviews'=>$Reviews));
+            return view('catalog.show', array('pelicula'=>$pelicula, 'Reviews'=>$Reviews, 'results'=>$results));
         }
         
-    public function searchMovie(Request $request){
-         $q = $request->input('q');
-         $arrayPeliculas = Movie::where('title', 'LIKE', '%' . $q . '%')
+         public function searchMovie(Request $request){
+                $q = $request->input('q');
+                $arrayPeliculas = Movie::where('title', 'LIKE', '%' . $q . '%')
                            ->orWhere('director', 'LIKE', '%' . $q . '%')
                            ->get();
-         return view('catalog.index', compact('arrayPeliculas', 'q'));
+                return view('catalog.index', compact('arrayPeliculas', 'q'));
         }
+
 
     }
 
