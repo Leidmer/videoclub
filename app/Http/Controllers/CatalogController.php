@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Movie;
 use App\Review;
+use App\Categoriab;
 use Notify;
 
 class CatalogController extends Controller
@@ -45,7 +46,7 @@ class CatalogController extends Controller
         $movie->director = $request->director;
         $movie->poster = $request->poster;
         $movie->synopsis = $request->synopsis;
-        
+
         $movie->save();
         Notify::success('La película se ha guardado/modificado correctamente'); 
         return redirect()->back();

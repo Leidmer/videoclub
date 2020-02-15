@@ -11,6 +11,6 @@ class Categoriab extends Model
     ];
 
     protected $fillable = [
-        'title', 'description'
+        'title', 'description','adult'
     ];
 }

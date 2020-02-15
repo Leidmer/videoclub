@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use App\Movie;
 use App\User;
+use App\Cateogoriab;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,7 +17,7 @@ class DatabaseSeeder extends Seeder
 	$this->command->info('Tabla catálogo inicializada con datos!');
 	self::seedUsers();
 	$this->command->info('Tabla usuarios inicializada con datos!');
-	self::seedCategory();
+	self::seedCategories();
 	$this->command->info('Tabla categories inicializada con datos!');
     }
 	
@@ -57,7 +58,7 @@ class DatabaseSeeder extends Seeder
 		foreach($this->arrayCategories as $categoriab ) {
 			$p = new Categoriab;
 			$p->title = $categoriab['title'];
-			$p->description = $categorib['description'];
+			$p->description = $categoriab['description'];
 			$p->adult = $categoriab['adult'];
 			$p->save();
 		}}

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoriab;
+use App\Movie;
 
 class CategoryController extends Controller
 {
@@ -55,7 +57,8 @@ class CategoryController extends Controller
      */
     public function show($id)
     {
-        //
+        $Movies=Movie::all()->where('category_id','=',$id);
+        return view('category.show',array('Movies' => $Movies));
     }
 
     /**
@@ -66,7 +69,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Categoriab=Categoriab::findOrFail($id);
+        return view('category.edit', array('Categoriab'=>$Categoriab));
     }
 
     /**
@@ -78,7 +82,10 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $categoria = Categoriab::findOrFail($id);
+        $categoria->update($request->all());
+        Notify::success('S`ha modificat la categoria');
+        return redirect('/category');
     }
 
     /**
@@ -89,6 +96,9 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $categoria = Categoriab::findOrFail($id);
+        $categoria->delete();
+        Notify::success('La categoria ha estat eliminada');
+        return redirect('/category');
     }
 }

@@ -58,7 +58,7 @@
                 <div style="margin-right:20px; margin-left:20px;margin-bottom:30px;">
                     <div style="margin-bottom:10px;">
                         <p>{{$Review->title}}</p>
-                        <p>{{$Review->stars}}</p>
+                        <p>{{$Review->stars}} Estrelles</p>
                         <small><strong style="margin-right:30px;">{{$Review->user->name}}</strong> {{date('d/m/Y', strtotime($Review->created_at))}}</small>
                     </div>    
                     <p>{{$Review->review}}</p>

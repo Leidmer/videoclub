@@ -17,7 +17,7 @@
         {{$categoria->desciption}}
         {{$(categoria->adult)?'Si':'No'}}
     
-        <a href="{{url('/category/'.$categoria->id)}}"><button type="button" class="btn" style="background-color: #611BBD; color: white">Mostrar</button></a>
+        <a href="{{url('/category/'.$categoria->id)}}"><button type="button" class="btn">Mostrar</button></a>
           <a href="{{url('/category/'.$categoria->id.'/edit')}}"><button type="button" class="btn btn-warning">Editar</button></a>
           <form action="{{action('CategoryController@destroy', $categoria->id)}}" method="post" style="display: inline">
             @csrf
