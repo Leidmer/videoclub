@@ -12,7 +12,8 @@
       <div class="card-body">
         <h5 class="card-title">{{$pelicula->title}}</h5>
         <p class="card-text">Año: {{$pelicula->year}}</p>
-        <!-- Button trigger modal -->
+        
+        <!-- Trailer de la peli-->
           <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
             Veure Trailer
           </button>
@@ -85,7 +86,6 @@
                         <small><strong style="margin-right:30px;">{{$Review->user->name}}</strong> {{date('d/m/Y', strtotime($Review->created_at))}}</small>
                     </div>    
                     <p>{{$Review->review}}</p>
-                    
                 </div>
                 <hr>
               </div>
@@ -120,7 +120,20 @@
     </div>
   </div>
 
+<!-- Llista de pelicules millor puntuades no acaba de funcionar
+  <li class="nav-item">
+                      <form action="{{ action('CatalogController@getRating')}}" method="GET">
+                        <div class="row">
+                          <div class="col-8">
+                              {{$results ?? ''}}
+                          </div>
+                          <div>
 
+                          </div>
+                        </div>
+                      </form>
+                    </li>
+    -->
 
     {{-- TODO: Imagen de la película --}}
 
