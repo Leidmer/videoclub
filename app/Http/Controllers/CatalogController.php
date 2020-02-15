@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Movie;
 use App\Review;
 use App\Categoriab;
+use App\Image;
 use Notify;
 
 class CatalogController extends Controller

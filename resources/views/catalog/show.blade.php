@@ -68,6 +68,10 @@
                     <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Eliminar pel·lícula 
                 </button>
             </form>
+
+        <!--Pujar imatge, es guarda a la base de dades i a /public/uploads-->
+        
+        <a class="btn btn-success" href="{{ url('/addimage')}}" role="button"><span  aria-hidden="true">Puja Imatge</span></a>
         <a class="btn btn-warning" href="{{ url('/catalog/edit/'.$pelicula->id )}}" role="button"><span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar película</span></a>
         <a class="btn btn-outline-dark" href="{{url('/catalog')}}" role="button"><span class="glyphicon glyphicon-chevron-left">Volver al listado</span></a>
     

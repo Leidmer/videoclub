@@ -31,7 +31,7 @@ Route::post('/review/create/{id}', 'CatalogController@postReview')->middleware('
 Route::get('/catalog','CatalogController@searchMovie')->middleware('auth');
 Route::get('/catalog/show','CatalogController@getRating')->middleware('auth');
 Route::resource('category','CategoryController');
-
-
+Route::get('/addimage','ImageController@imageIndex');
+Route::post('/addimage','ImageController@imageStore')->name('addimage');
 Auth::routes();
 Route::get('/home', 'HomeController@index')->middleware('auth');;
