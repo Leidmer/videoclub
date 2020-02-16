@@ -8,6 +8,7 @@ use App\Review;
 use App\Categoriab;
 use App\Image;
 use Notify;
+use DB;
 
 class CatalogController extends Controller
 {
@@ -145,12 +146,22 @@ class CatalogController extends Controller
         }
 
         
-        public function getRating(Request $request){
-            $results = DB::select('SELECT AVG(stars) FROM reviews WHERE stars>1', [1])->get();
-
-            return view('catalog.show', ['results' => $results]);
+        //La idea aqui era fer una consulta que retornes la mitjana entre tots els reviews de les estrelles pero sempre imprimeix
+        //Tota la taula de reviews, per tant en el show.blade.php o comento, es pot descomentar per comprobar el resultat
+        public function returnAverageStars()
+        {
+            $results = DB::column('stars')->table('reviews')->where('stars', '>=', 1)->avg('stars');
+        
+            return $results;
         }
         
+        public function showRating()
+        {
+            return view('catalog.show', [
+                'reviews' => $this->returnAverageStars()
+            ]);
+        }
+
 
     }
 

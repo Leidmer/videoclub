@@ -29,7 +29,7 @@ Route::delete('catalog/delete/{id}', 'CatalogController@deleteMovie')->middlewar
 
 Route::post('/review/create/{id}', 'CatalogController@postReview')->middleware('auth');
 Route::get('/catalog','CatalogController@searchMovie')->middleware('auth');
-Route::get('/catalog/show','CatalogController@getRating')->middleware('auth');
+Route::get('/catalog/show','CatalogController@showRating')->middleware('auth');;
 Route::resource('category','CategoryController');
 Route::get('/addimage','ImageController@imageIndex');
 Route::post('/addimage','ImageController@imageStore')->name('addimage');

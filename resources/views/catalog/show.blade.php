@@ -92,6 +92,7 @@
                     <p>{{$Review->review}}</p>
                 </div>
                 <hr>
+
               </div>
 
         @endforeach
@@ -124,20 +125,16 @@
     </div>
   </div>
 
-<!-- Llista de pelicules millor puntuades no acaba de funcionar
-  <li class="nav-item">
-                      <form action="{{ action('CatalogController@getRating')}}" method="GET">
-                        <div class="row">
-                          <div class="col-8">
-                              {{$results ?? ''}}
-                          </div>
-                          <div>
-
-                          </div>
-                        </div>
+                <!-- Llista de pelicules millor puntuades no acaba de funcionar-->
+                <!--
+                <form action="{{ action('CatalogController@showRating')}}" method="GET">
+                      <ul>
+                        <li>{{ $Reviews }}</li>
+                      </ul>
                       </form>
-                    </li>
-    -->
+                      -->
+
+
 
     {{-- TODO: Imagen de la película --}}
 
