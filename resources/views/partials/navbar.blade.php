@@ -27,7 +27,7 @@
                       <form action="{{ action('CatalogController@searchMovie')}}" method="GET">
                         <div class="row">
                           <div class="col-8">
-                            <input class="form-control" type="text" name="q"/>
+                            <input class="form-control" type="text" name="buscador"/>
                           </div>
                           <div>
                             <button type="submit" class="btn btn-success">Buscar</button>
